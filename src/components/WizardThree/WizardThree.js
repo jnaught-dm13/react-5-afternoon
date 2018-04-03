@@ -23,7 +23,7 @@ class WizardThree extends Component {
             <Link to="/wFour">
               <button
                 value="rentalProperty"
-                onClick={event => updateProp(event.target.value)}
+                onClick={e => updateProp(e.target.value)}
               >
                 Rental Property
               </button>
@@ -44,7 +44,10 @@ class WizardThree extends Component {
 }
 function mapStateToProps(state) {
   const { propToBeUsedOn } = state;
-  return propToBeUsedOn;
+
+  return {
+    propToBeUsedOn
+  };
 }
 
 export default connect(mapStateToProps, { updateProp })(WizardThree);
